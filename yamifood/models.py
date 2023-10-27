@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 class Food(models.Model):
     FOOD_TYPE = [
-        ("Lunch",),
-        ("Drinks",),
-        ("Dinner",),
+        ("l","Lunch",),
+        ("d","Drinks",),
+        ("d","Dinner",),
     ]
     name = models.CharField(max_length=50)
     description = models.TextField(max_length= 100)
