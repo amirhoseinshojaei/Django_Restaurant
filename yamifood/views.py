@@ -12,7 +12,7 @@ def gallery_list(request):
     context = {
         'obj':obj
     }
-    return render('food/index.html',context)
+    return render('food/gallery.html',context)
 
 class StafList(ListView):
     model = Staff
