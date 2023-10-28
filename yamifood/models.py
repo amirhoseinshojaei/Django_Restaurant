@@ -26,7 +26,7 @@ class Gallery(models.Model):
     def __str__(self):
         return "{},{}".format(self.image_name,self.date)
     
-class Staf(models.Model):
+class Staff(models.Model):
     name = models.CharField(max_length=55)
     work_fields = models.CharField(max_length=50)
     description = models.TextField(max_length=100)

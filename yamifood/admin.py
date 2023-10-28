@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Food , Gallery
+from .models import Food , Gallery , Staff
 # Register your models here.
 class FoodAdmin(admin.ModelAdmin):
     list_display=[
@@ -24,3 +24,18 @@ class GalleryAdmin(admin.ModelAdmin):
     ordering = ['date']
 
 admin.site.register(Gallery,GalleryAdmin)
+
+class StaffAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'work_fields',
+        'date'
+    ]
+    list_filter = [
+        'name',
+        'work_fields'
+    ]
+    search_fields = ['name','work_fields']
+    ordering = ['date']
+
+admin.site.register(Staff,StaffAdmin)
