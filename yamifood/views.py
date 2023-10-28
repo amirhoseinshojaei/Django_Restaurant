@@ -14,7 +14,7 @@ def gallery_list(request):
     }
     return render('food/gallery.html',context)
 
-class StafList(ListView):
+class StaffList(ListView):
     model = Staff
     context_object_name = 'objects_staff'
     template_name = 'staff/staff.html'
