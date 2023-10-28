@@ -23,4 +23,4 @@ class GalleryAdmin(admin.ModelAdmin):
     search_fields = ['name']
     ordering = ['date']
 
-admin.site.register(GalleryAdmin,Gallery)
+admin.site.register(Gallery,GalleryAdmin)
