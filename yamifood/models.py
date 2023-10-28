@@ -19,7 +19,8 @@ class Food(models.Model):
         return self.name
     
 class Gallery(models.Model):
-    image_name = models.ImageField(upload_to='gallery/')
+    name = models.CharField(max_length= 50)
+    image = models.ImageField(upload_to='gallery/')
     date = models.DateTimeField(auto_now= False , auto_now_add= True)
 
     def __str__(self):
