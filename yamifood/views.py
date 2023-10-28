@@ -17,4 +17,4 @@ def gallery_list(request):
 class StafList(ListView):
     model = Staff
     context_object_name = 'objects_staff'
-    template_name = 'staff/index.html'
+    template_name = 'staff/staff.html'
