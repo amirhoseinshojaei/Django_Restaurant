@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "yamifood.apps.YamifoodConfig",
     "reservation.apps.ReservationConfig",
+    "contact.apps.ContactConfig",
 ]
 
 MIDDLEWARE = [
