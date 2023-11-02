@@ -13,7 +13,7 @@ class Reservation(models.Model):
     ]
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=255)
-    number = models.PositiveIntegerField()
+    number = models.IntegerField()
     date = models.DateField(auto_now=False,auto_now_add=True)
     time = models.TimeField(auto_now=False,auto_now_add=True)
     person = models.CharField(max_length=255,choices=person_number,default='1')
