@@ -21,3 +21,8 @@ class StaffList(ListView):
 
 class AboutPage(TemplateView):
     template_name = 'static/about.html'
+
+class MenuView(ListView):
+    queryset = Food.objects.filter(status = True)
+    context_object_name = 'menu-list'
+    template_name = 'food/menu.html'
