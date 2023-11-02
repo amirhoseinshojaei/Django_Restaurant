@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Food , Gallery , Staff
-from django.views.generic import ListView
+from django.views.generic import ListView,TemplateView
 # Create your views here.
 class FoodList(ListView):
     queryset = Food.objects.filter(status=True)
@@ -18,3 +18,6 @@ class StaffList(ListView):
     model = Staff
     context_object_name = 'objects_staff'
     template_name = 'staff/staff.html'
+
+class AboutPage(TemplateView):
+    template_name = 'static/about.html'
