@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path ('',include("yamifood.urls")),
     path ("",include("reservation.urls")),
+    path ("",include('contact.urls')),
 ]
