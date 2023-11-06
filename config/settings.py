@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "yamifood.apps.YamifoodConfig",
     "reservation.apps.ReservationConfig",
     "contact.apps.ContactConfig",
+    "blog.apps.BlogConfig",
 ]
 
 MIDDLEWARE = [
