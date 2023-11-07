@@ -30,3 +30,13 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Comment(models.Model):
+    blog = models.ForeignKey("Blog",related_name='comments',on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=25)
+    email  = models.EmailField(max_length=255)
+    message = RichTextField()
+
+    def __str__(self):
+        return self.email
