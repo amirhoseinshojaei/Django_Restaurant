@@ -10,7 +10,7 @@ def blog_list(request):
         'blogs':blogs
     }
     paginator = Paginator(blogs,6)
-    page_number = request.Get.get('page')
+    page_number = request.GET.get('page')
     blog_list = paginator.get_page('page_number')
 
     return render (request,'blogs/blog_list.html',context)
@@ -41,6 +41,15 @@ def blog_detail(request,slug):
             form = CommentForm()
 
     return render(request,'blogs/blog_detail.html',context)
+
+def search(request):
+    if request.method=="GET":
+        query = request.GET.get("search")
+
+    blog_list = Blog.objects.filter(title__icontains=query)
+
+    return render(request,'blogs/blog_detail.html',context={'blog_list':blog_list})
+
 
 
 
