@@ -24,7 +24,7 @@ urlpatterns = [
     path ('',include("yamifood.urls")),
     path ("",include("reservation.urls")),
     path ("",include('contact.urls')),
-    path ("",include("blog.urls")),
+    path ("blogs/",include("blog.urls")),
 ]
 
 urlpatterns += static(settings.STATIC_URL , document_root=settings.STATIC_ROOT)
