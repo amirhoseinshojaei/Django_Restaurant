@@ -12,7 +12,7 @@ class Blog(models.Model):
     time = models.TimeField(default= timezone.now)
     image = models.ImageField(upload_to='blogs/',null=True,blank=True)
     category = models.ForeignKey("Category",related_name= "categorys",null=True,blank=True,on_delete=models.CASCADE)
-    tag = models.ManyToManyField("Tag",related_name="tags",blank=True,null=True)
+    tag = models.ManyToManyField("Tag",related_name="tags")
 
     def __str__(self):
         return self.title
@@ -33,7 +33,7 @@ class Tag(models.Model):
     
 class Comment(models.Model):
     blog = models.ForeignKey("Blog",related_name='comments',on_delete=models.CASCADE)
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    #user = models.ForeignKey(User,on_delete=models.CASCADE)
     name = models.CharField(max_length=25)
     email  = models.EmailField(max_length=255)
     message = RichTextField()

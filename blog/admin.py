@@ -13,8 +13,8 @@ class BlogAdmin(admin.ModelAdmin):
         'author',
         'date',
         'time',
-        'category',
-        'tag'
+        # 'category',
+        # 'tag'
     ]
     list_filter = ['date','time','category']
     search_fields = ['category']
