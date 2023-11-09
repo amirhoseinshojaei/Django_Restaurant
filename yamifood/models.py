@@ -10,7 +10,7 @@ class Food(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length= 100)
     price = models.PositiveIntegerField()
-    image = models.ImageField(upload_to= 'foods/')
+    image = models.ImageField(upload_to= 'media/foods/')
     type = models.CharField(max_length=50,choices= FOOD_TYPE, default="Lunch")
     pub_date = models.DateTimeField(auto_now= False , auto_now_add=True)
     status = models.BooleanField(default= False)
@@ -20,17 +20,17 @@ class Food(models.Model):
     
 class Gallery(models.Model):
     name = models.CharField(max_length= 50)
-    image = models.ImageField(upload_to='gallery/')
+    image = models.ImageField(upload_to='media/gallery/')
     date = models.DateTimeField(auto_now= False , auto_now_add= True)
 
     def __str__(self):
-        return "{},{}".format(self.image_name,self.date)
+        return "{},{}".format(self.date,self.name)
     
 class Staff(models.Model):
     name = models.CharField(max_length=55)
     work_fields = models.CharField(max_length=50)
     description = models.TextField(max_length=100)
-    image = models.ImageField(upload_to= 'staf/')
+    image = models.ImageField(upload_to= 'media/staf/')
     date = models.DateTimeField(auto_now=False,auto_now_add=True)
 
     def __str__(self):
