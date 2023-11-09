@@ -22,4 +22,5 @@ urlpatterns = [
     path ('',include("yamifood.urls")),
     path ("",include("reservation.urls")),
     path ("",include('contact.urls')),
+    path ("",include("blog.urls")),
 ]

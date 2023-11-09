@@ -16,7 +16,7 @@ def blog_list(request):
     return render (request,'blogs/blog_list.html',context)
 
 def blog_detail(request,slug):
-    blog = get_object_or_404(blog,slug=slug)
+    blog = get_object_or_404(Blog,slug=slug)
     category = Category.objects.all()
     tags = Tag.objects.all().filter(tags = blog)
     recents = Blog.objects.all().order_by("date")[:4]
@@ -41,6 +41,8 @@ def blog_detail(request,slug):
             form = CommentForm()
 
     return render(request,'blogs/blog_detail.html',context)
+
+
 
 
 
